@@ -4,7 +4,7 @@
 
 ![home](screenshots/1.png)
 
-![result](screenshots/2.png)
+![result](screenshots/organisations.png)
 
 👨‍💻 Developer
 ===============
