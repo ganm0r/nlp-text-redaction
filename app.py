@@ -1,24 +1,19 @@
 import time
+import os
+import spacy
 from flask import Flask, url_for, render_template, request, send_file, redirect
 from flask_uploads import UploadSet, configure_uploads, ALL, DATA
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
 
-# Other Packages
-import os
-import spacy
 nlp = spacy.load('en_core_web_sm')
-
 timestr = time.strftime("%Y%m%d-%H%M%S")
 
-# Initialize App
 app = Flask(__name__)
-# Configuration For Uploads
+
 files = UploadSet('files', ALL)
 app.config['UPLOADED_FILES_DEST'] = 'static/uploadedfiles'
 configure_uploads(app, files)
-
-# Functions to Sanitize and Redact
 
 
 def sanitize_names(text):
